@@ -3,11 +3,9 @@ import Nav from './Nav'
 const Header = () => {
   return (
     <header className='flex flex-col  max-w-8xl mx-auto py-2 md:py-4'>
-      <span className='md:hidden px-2'>lotte gardens</span>
-
       <Nav />
 
-      <div className='px-2 mt-10 mb-2 lg:mt-20 lg:mb-14 md:px-8'>
+      <div className='px-2 mt-24 mb-2 lg:mt-26 lg:mb-14 md:px-8'>
         <img
           src='/assets/logo.svg'
           alt='logo'
@@ -15,7 +13,7 @@ const Header = () => {
         />
       </div>
 
-      <div className='px-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:px-4'>
+      <div className='px-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:px-4 text-sm'>
         <div className='flex flex-col'>
           <span>Gardening studio</span>
           <span>based in Cape Cod, EEUU.</span>

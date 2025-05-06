@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react'
-import Card from './Card'
+import Card from './CardText'
 import Modal from './Modal'
 
 interface Data {
   id: number
-  image: string
   title: string
   subtitle: string
-  description: string
+  year: string
 }
 
 const List = ({ data }: { data: Data[] }) => {

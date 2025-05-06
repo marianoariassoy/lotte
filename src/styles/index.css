@@ -18,9 +18,22 @@
 }
 
 body {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .max-w-8xl {
   max-width: 120rem;
+}
+
+.fade-in {
+  animation: fade-in 0.1s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
