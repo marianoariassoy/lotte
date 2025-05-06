@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/assets/fonts/SatoshiVariable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@layer utilities {
+  .font-satoshi {
+    font-family: 'Satoshi', sans-serif;
+  }
+}
+
+.bg-primary {
+  background-color: #ebebeb;
+}
+
+body {
+  font-size: 12px;
+}
+
+.max-w-8xl {
+  max-width: 120rem;
+}
