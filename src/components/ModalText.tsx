@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import useFetch from '../hooks/useFetch'
 import SyncLoader from 'react-spinners/SyncLoader'
 
@@ -16,11 +17,23 @@ const Modal = ({
   setSelectedId: React.Dispatch<React.SetStateAction<number>>
   selectedId: number
 }) => {
+  useEffect(() => {
+    const metaThemeColor = document.querySelector("meta[name='theme-color']")
+
+    if (metaThemeColor) {
+      metaThemeColor.setAttribute('content', '#ebebeb')
+    } else {
+      const newMeta = document.createElement('meta')
+      newMeta.name = 'theme-color'
+      newMeta.content = '#ebebeb'
+      document.head.appendChild(newMeta)
+    }
+  }, [])
+
   const { data, loading } = useFetch<DetailData>(`/details/${selectedId}`)
 
   if (!data) return null
 
-  if (!selectedId) return null
   return (
     <div
       className='fixed fade-in top-0 left-0 w-full h-full backdrop-blur-sm z-50 overflow-y-auto cursor-pointer'
@@ -33,9 +46,8 @@ const Modal = ({
           </div>
         ) : (
           <>
-            <div className='flex gap-2 items-center justify-between'>
+            <div className='flex gap-2 items-start justify-between'>
               <h1 className='text-2xl lg:text-3xl'>{data.title}</h1>
-
               <button
                 className='text-2xl lg:hidden'
                 onClick={() => setSelectedId(0)}

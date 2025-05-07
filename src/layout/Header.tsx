@@ -1,3 +1,4 @@
+import { Link } from 'wouter'
 import Nav from './Nav'
 
 const Header = () => {
@@ -6,11 +7,13 @@ const Header = () => {
       <Nav />
 
       <div className='px-2 mt-24 mb-2 lg:mt-26 lg:mb-14 md:px-8'>
-        <img
-          src='/assets/logo.svg'
-          alt='logo'
-          className='w-full'
-        />
+        <Link href='/'>
+          <img
+            src='/assets/logo.svg'
+            alt='logo'
+            className='w-full'
+          />
+        </Link>
       </div>
 
       <div className='px-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:px-4 text-sm'>

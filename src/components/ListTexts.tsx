@@ -32,12 +32,12 @@ const List = ({ data }: { data: Data[] }) => {
         ))}
       </div>
 
-      {selectedId && (
+      {selectedId ? (
         <Modal
           setSelectedId={setSelectedId}
           selectedId={selectedId}
         />
-      )}
+      ) : null}
     </div>
   )
 }
