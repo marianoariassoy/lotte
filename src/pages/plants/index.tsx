@@ -1,6 +1,6 @@
 import List from '../../components/List'
 import useFetch from '../../hooks/useFetch'
-import SyncLoader from 'react-spinners/SyncLoader'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 interface Data {
   id: number
@@ -14,7 +14,7 @@ const Index = () => {
   if (loading)
     return (
       <div className='w-full h-full flex items-center justify-center mt-20'>
-        <SyncLoader />
+        <PulseLoader />
       </div>
     )
 

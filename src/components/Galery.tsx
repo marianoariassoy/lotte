@@ -1,6 +1,6 @@
 import Image from './Image'
 import useFetch from '../hooks/useFetch'
-import SyncLoader from 'react-spinners/SyncLoader'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 type DetailData = {
   id: number
@@ -13,7 +13,7 @@ const Galery = ({ id_item }: { id_item: number }) => {
   if (loading)
     return (
       <div className='w-full h-full flex items-center justify-center'>
-        <SyncLoader />
+        <PulseLoader />
       </div>
     )
 

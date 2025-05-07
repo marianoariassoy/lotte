@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import SyncLoader from 'react-spinners/SyncLoader'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 interface Props {
   src: string
@@ -19,7 +19,7 @@ const ImageComponent = ({ src, alt }: Props) => {
 
   return isLoading ? (
     <div className='w-full h-full flex items-center justify-center py-12'>
-      <SyncLoader />
+      <PulseLoader />
     </div>
   ) : (
     <img

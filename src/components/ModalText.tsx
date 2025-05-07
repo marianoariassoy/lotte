@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import useFetch from '../hooks/useFetch'
-import SyncLoader from 'react-spinners/SyncLoader'
+import PulseLoader from 'react-spinners/PulseLoader'
 
 type DetailData = {
   id: number
@@ -42,7 +42,7 @@ const Modal = ({
       <div className='w-full lg:w-1/2 max-w-3xl bg-primary p-2 lg:p-4 border-black border-r flex flex-col gap-y-4 min-h-full cursor-auto'>
         {loading ? (
           <div className='w-full h-full flex items-center justify-center'>
-            <SyncLoader />
+            <PulseLoader />
           </div>
         ) : (
           <>
