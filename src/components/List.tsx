@@ -20,7 +20,7 @@ const List = ({ data }: { data: Data[] }) => {
   }, [data])
 
   return (
-    <div>
+    <>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {data.map((item, index) => (
           <Card
@@ -31,13 +31,13 @@ const List = ({ data }: { data: Data[] }) => {
         ))}
       </div>
 
-      {selectedId && (
+      {selectedId ? (
         <Modal
           setSelectedId={setSelectedId}
           selectedId={selectedId}
         />
-      )}
-    </div>
+      ) : null}
+    </>
   )
 }
 

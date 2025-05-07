@@ -18,13 +18,6 @@ const Modal = ({
 }) => {
   const { data, loading } = useFetch<DetailData>(`/details/${selectedId}`)
 
-  if (loading)
-    return (
-      <div className='w-full h-full flex items-center justify-center'>
-        <SyncLoader />
-      </div>
-    )
-
   if (!data) return null
 
   if (!selectedId) return null
@@ -34,21 +27,28 @@ const Modal = ({
       onClick={() => setSelectedId(0)}
     >
       <div className='w-full lg:w-1/2 max-w-3xl bg-primary p-2 lg:p-4 border-black border-r flex flex-col gap-y-4 min-h-full cursor-auto'>
-        <div className='flex gap-2 items-center justify-between'>
-          <h1 className='text-2xl lg:text-3xl'>{data.title}</h1>
+        {loading ? (
+          <div className='w-full h-full flex items-center justify-center'>
+            <SyncLoader />
+          </div>
+        ) : (
+          <>
+            <div className='flex gap-2 items-center justify-between'>
+              <h1 className='text-2xl lg:text-3xl'>{data.title}</h1>
 
-          <button
-            className='text-2xl lg:hidden'
-            onClick={() => setSelectedId(0)}
-          >
-            X
-          </button>
-        </div>
-
-        <h2 className='underline'>
-          {data.subtitle}, {data.year}
-        </h2>
-        <p className='mb-4'>{data.text}</p>
+              <button
+                className='text-2xl lg:hidden'
+                onClick={() => setSelectedId(0)}
+              >
+                X
+              </button>
+            </div>
+            <h2 className='underline'>
+              {data.subtitle}, {data.year}
+            </h2>
+            <p className='mb-4'>{data.text}</p>
+          </>
+        )}
       </div>
     </div>
   )
