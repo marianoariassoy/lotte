@@ -29,6 +29,10 @@ const Modal = ({
       newMeta.content = '#ebebeb'
       document.head.appendChild(newMeta)
     }
+
+    return () => {
+      metaThemeColor.setAttribute('content', '#FFFFFF')
+    }
   }, [])
 
   const { data, loading } = useFetch<DetailData>(`/details/${selectedId}`)
@@ -37,7 +41,7 @@ const Modal = ({
 
   return (
     <div
-      className='fixed fade-in top-0 left-0 w-full h-full backdrop-blur-sm z-50 overflow-y-auto cursor-pointer'
+      className='fixed top-0 left-0 w-full h-full backdrop-blur-sm z-50 overflow-y-auto cursor-pointer'
       onClick={() => setSelectedId(0)}
     >
       <div className='w-full lg:w-1/2 max-w-3xl bg-primary p-2 lg:p-4 border-black border-r flex flex-col gap-y-4 min-h-full cursor-auto'>
