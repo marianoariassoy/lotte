@@ -4,8 +4,6 @@ interface Data {
   id: number
   image: string
   title: string
-  subtitle: string
-  description: string
 }
 
 const Card = ({ data, setSelectedId }: { data: Data; setSelectedId: React.Dispatch<React.SetStateAction<number>> }) => {

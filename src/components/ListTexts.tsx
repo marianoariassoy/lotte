@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Card from './CardText'
-import Modal from './Modal'
+import Modal from './ModalText'
 
 interface Data {
   id: number
@@ -32,10 +32,12 @@ const List = ({ data }: { data: Data[] }) => {
         ))}
       </div>
 
-      <Modal
-        setSelectedId={setSelectedId}
-        selectedId={selectedId}
-      />
+      {selectedId && (
+        <Modal
+          setSelectedId={setSelectedId}
+          selectedId={selectedId}
+        />
+      )}
     </div>
   )
 }

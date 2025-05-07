@@ -1,6 +1,5 @@
 import useFetch from '../hooks/useFetch'
 import SyncLoader from 'react-spinners/SyncLoader'
-import Galery from './Galery'
 
 type DetailData = {
   id: number
@@ -36,10 +35,7 @@ const Modal = ({
     >
       <div className='w-full lg:w-1/2 max-w-3xl bg-primary p-2 lg:p-4 border-black border-r flex flex-col gap-y-4 min-h-full cursor-auto'>
         <div className='flex gap-2 items-center justify-between'>
-          <div className='flex gap-x-8'>
-            {data.year && <h1 className='text-2xl lg:text-3xl'>{data.year}</h1>}
-            <h1 className='text-2xl lg:text-3xl'>{data.subtitle}</h1>
-          </div>
+          <h1 className='text-2xl lg:text-3xl'>{data.title}</h1>
 
           <button
             className='text-2xl lg:hidden'
@@ -49,9 +45,10 @@ const Modal = ({
           </button>
         </div>
 
-        <h2 className='underline'>{data.title}</h2>
+        <h2 className='underline'>
+          {data.subtitle}, {data.year}
+        </h2>
         <p className='mb-4'>{data.text}</p>
-        <Galery id_item={data.id} />
       </div>
     </div>
   )

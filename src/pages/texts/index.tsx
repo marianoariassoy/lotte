@@ -1,32 +1,25 @@
 import List from '../../components/ListTexts'
+import useFetch from '../../hooks/useFetch'
+import SyncLoader from 'react-spinners/SyncLoader'
 
-const index = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'A Natural History of North American Trees',
-      subtitle: 'Donald Culross Peattie',
-      year: '1950'
-    },
-    {
-      id: 2,
-      title: 'The Botany of Desire: A Plants-Eye View of the World',
-      subtitle: 'Michael Pollan',
-      year: '2001'
-    },
-    {
-      id: 3,
-      title: 'A Natural History of North American Trees',
-      subtitle: 'Donald Culross Peattie',
-      year: '1950'
-    },
-    {
-      id: 4,
-      title: 'A Natural History of North American Trees',
-      subtitle: 'Donald Culross Peattie',
-      year: '1950'
-    }
-  ]
+interface Data {
+  id: number
+  title: string
+  subtitle: string
+  year: string
+}
+
+const Index = () => {
+  const { data, loading } = useFetch<Data[]>(`/texts`)
+
+  if (loading)
+    return (
+      <div className='w-full h-full flex items-center justify-center mt-20'>
+        <SyncLoader />
+      </div>
+    )
+
+  if (!data) return null
 
   return (
     <section>
@@ -35,4 +28,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

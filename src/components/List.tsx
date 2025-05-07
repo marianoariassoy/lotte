@@ -6,8 +6,6 @@ interface Data {
   id: number
   image: string
   title: string
-  subtitle: string
-  description: string
 }
 
 const List = ({ data }: { data: Data[] }) => {
@@ -33,10 +31,12 @@ const List = ({ data }: { data: Data[] }) => {
         ))}
       </div>
 
-      <Modal
-        setSelectedId={setSelectedId}
-        selectedId={selectedId}
-      />
+      {selectedId && (
+        <Modal
+          setSelectedId={setSelectedId}
+          selectedId={selectedId}
+        />
+      )}
     </div>
   )
 }
