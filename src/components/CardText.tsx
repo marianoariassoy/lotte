@@ -7,8 +7,7 @@ interface Data {
 
 const Card = ({ data, setSelectedId }: { data: Data; setSelectedId: React.Dispatch<React.SetStateAction<number>> }) => {
   return (
-    <article className='aspect-[4/5] relative flex items-center justify-center bg-primary'>
-      {/* <article className='aspect-[4/5] relative flex items-center justify-center border-black border-t border-r bg-primary [&>div:nth-child(2n)]:border-r-0 lg:[&>div:nth-child(4n)]:border-r-0'> */}
+    <article className='aspect-[4/5] relative flex items-center justify-center border-black border-t border-r bg-primary [&>div:nth-child(2n)]:border-r-0 lg:[&>div:nth-child(4n)]:border-r-0'>
       <button
         className='text-center px-8 lg:px-20 hover:underline cursor-pointer'
         onClick={() => setSelectedId(data.id)}
