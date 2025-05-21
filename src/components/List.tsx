@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'wouter'
 import Card from './Card'
 import CardText from './CardText'
 import Modal from './Modal'
@@ -14,6 +15,7 @@ interface Data {
 
 const List = ({ data }: { data: Data[] }) => {
   const [selectedId, setSelectedId] = useState(0)
+  const [location] = useLocation()
 
   useEffect(() => {
     setSelectedId(0)
@@ -25,7 +27,13 @@ const List = ({ data }: { data: Data[] }) => {
 
   return (
     <>
-      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <div
+        className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ${
+          location === '/texts'
+            ? '[&>article]:border-black [&>article]:border-r [&>article:nth-child(2n)]:border-r-0 lg:[&>article:nth-child(4n)]:border-r-0'
+            : ''
+        }`}
+      >
         {data.map(
           (item, index) =>
             (item.type === 1 && (
