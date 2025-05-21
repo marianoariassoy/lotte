@@ -1,7 +1,7 @@
 export const menu = [
   {
     title: 'Projects',
-    url: '/'
+    url: '/projects'
   },
   {
     title: 'Plants',
@@ -14,13 +14,5 @@ export const menu = [
   {
     title: 'Texts',
     url: '/texts'
-  },
-  {
-    title: 'About',
-    url: '/about'
-  },
-  {
-    title: 'Contact',
-    url: '/contact'
   }
 ]

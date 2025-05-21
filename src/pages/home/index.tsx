@@ -4,14 +4,12 @@ import PulseLoader from 'react-spinners/PulseLoader'
 
 interface Data {
   id: number
-  title: string
-  subtitle: string
-  year: string
   image: string
+  title: string
 }
 
 const Index = () => {
-  const { data, loading } = useFetch<Data[]>(`/texts`)
+  const { data, loading } = useFetch<Data[]>(`/home`)
 
   if (loading)
     return (

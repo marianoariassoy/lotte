@@ -1,11 +1,15 @@
 import { useState, useEffect } from 'react'
 import Card from './Card'
+import CardText from './CardText'
 import Modal from './Modal'
 
 interface Data {
   id: number
   image: string
   title: string
+  type?: number
+  subtitle?: string
+  year?: string
 }
 
 const List = ({ data }: { data: Data[] }) => {
@@ -22,13 +26,44 @@ const List = ({ data }: { data: Data[] }) => {
   return (
     <>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-        {data.map((item, index) => (
-          <Card
-            key={index}
-            data={item}
-            setSelectedId={setSelectedId}
-          />
-        ))}
+        {data.map(
+          (item, index) =>
+            (item.type === 1 && (
+              <Card
+                key={index}
+                data={item}
+                setSelectedId={setSelectedId}
+              />
+            )) ||
+            (item.type === 2 && (
+              <Card
+                key={index}
+                data={item}
+                setSelectedId={setSelectedId}
+              />
+            )) ||
+            (item.type === 3 && (
+              <CardText
+                key={index}
+                data={item}
+                setSelectedId={setSelectedId}
+              />
+            )) ||
+            (item.type === 4 &&
+              (item.title === 'Diary' ? (
+                <CardText
+                  key={index}
+                  data={item}
+                  setSelectedId={setSelectedId}
+                />
+              ) : (
+                <Card
+                  key={index}
+                  data={item}
+                  setSelectedId={setSelectedId}
+                />
+              )))
+        )}
       </div>
 
       {selectedId ? (

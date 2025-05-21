@@ -1,8 +1,8 @@
 interface Data {
   id: number
   title: string
-  subtitle: string
-  year: string
+  subtitle?: string
+  year?: string
 }
 
 const Card = ({ data, setSelectedId }: { data: Data; setSelectedId: React.Dispatch<React.SetStateAction<number>> }) => {

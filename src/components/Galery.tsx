@@ -1,6 +1,5 @@
 import Image from './Image'
 import useFetch from '../hooks/useFetch'
-import PulseLoader from 'react-spinners/PulseLoader'
 
 type DetailData = {
   id: number
@@ -10,12 +9,7 @@ type DetailData = {
 const Galery = ({ id_item }: { id_item: number }) => {
   const { data, loading } = useFetch<DetailData[]>(`/images/${id_item}`)
 
-  if (loading)
-    return (
-      <div className='w-full h-full flex items-center justify-center'>
-        <PulseLoader />
-      </div>
-    )
+  if (loading) return null
 
   if (!data) return null
 

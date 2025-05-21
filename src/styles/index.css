@@ -13,6 +13,14 @@
   }
 }
 
+.translate {
+  transform: translateX(0%);
+}
+
+.text-sm {
+  font-size: 0.8rem;
+}
+
 .bg-primary {
   background-color: #ebebeb;
 }
