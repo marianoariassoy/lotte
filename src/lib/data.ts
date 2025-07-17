@@ -1,18 +1,33 @@
 export const menu = [
   {
-    title: 'Projects',
+    title_en: 'Projects',
+    title_es: 'Proyectos',
     url: '/projects'
   },
   {
-    title: 'Plants',
+    title_en: 'Plants',
+    title_es: 'Plantas',
     url: '/plants'
   },
   {
-    title: 'Journal',
+    title_en: 'Journal',
+    title_es: 'Entradas',
     url: '/journal'
   },
   {
-    title: 'Texts',
+    title_en: 'Texts',
+    title_es: 'Textos',
     url: '/texts'
+  }
+]
+
+export const language = [
+  {
+    title_en: 'English',
+    title_es: 'Español'
+  },
+  {
+    title_en: 'Español',
+    title_es: 'Inglés'
   }
 ]

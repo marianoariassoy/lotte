@@ -18,8 +18,8 @@ const Header = () => {
 
       <div className='px-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:px-4 text-sm'>
         <div className='flex flex-col'>
-          <span>Gardening studio</span>
-          <span>based in Cape Cod, EEUU.</span>
+          <span>Landscape studio</span>
+          <span>based on Cape Cod, EEUU - WW</span>
         </div>
         <div></div>
         <div className='flex flex-col'>

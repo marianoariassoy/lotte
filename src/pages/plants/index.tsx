@@ -1,6 +1,7 @@
 import List from '../../components/List'
 import useFetch from '../../hooks/useFetch'
 import PulseLoader from 'react-spinners/PulseLoader'
+import { useDataContext } from '../../context/useDataContext'
 
 interface Data {
   id: number
@@ -9,7 +10,8 @@ interface Data {
 }
 
 const Index = () => {
-  const { data, loading } = useFetch<Data[]>(`/plants`)
+  const { lan } = useDataContext()
+  const { data, loading } = useFetch<Data[]>(`/plants/${lan}`)
 
   if (loading)
     return (

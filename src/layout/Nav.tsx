@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { Link, useLocation } from 'wouter'
 import { menu } from '../lib/data'
 import Modal from '../components/Modal'
+import { useDataContext } from '../context/useDataContext'
+import Lan from './Lan'
 
 const Nav = () => {
   const [location] = useLocation()
   const [selectedId, setSelectedId] = useState(0)
+  const { lan } = useDataContext()
 
   return (
     <div className='fixed top-0 left-0 w-full z-40 p-2 md:p-4 text-sm'>
@@ -30,7 +33,7 @@ const Nav = () => {
             href={item.url}
             className={`${location === item.url ? 'underline' : 'hover:underline'}`}
           >
-            {item.title}
+            {lan === 'en' ? item.title_en : item.title_es}
           </Link>
         ))}
 
@@ -40,6 +43,8 @@ const Nav = () => {
         >
           About
         </button>
+
+        <Lan />
       </nav>
 
       {selectedId ? (

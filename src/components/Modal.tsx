@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import useFetch from '../hooks/useFetch'
 import PulseLoader from 'react-spinners/PulseLoader'
 import Galery from './Galery'
+import { useDataContext } from '../context/useDataContext'
 
 type DetailData = {
   id: number
@@ -19,6 +20,8 @@ const Modal = ({
   setSelectedId: React.Dispatch<React.SetStateAction<number>>
   selectedId: number
 }) => {
+  const { lan } = useDataContext()
+
   useEffect(() => {
     const metaThemeColor = document.querySelector("meta[name='theme-color']")
 
@@ -36,7 +39,7 @@ const Modal = ({
     }
   }, [])
 
-  const { data, loading } = useFetch<DetailData>(`/details/${selectedId}`)
+  const { data, loading } = useFetch<DetailData>(`/details/${selectedId}/${lan}`)
 
   if (!data) return null
 
@@ -95,7 +98,7 @@ const Modal = ({
               )}
 
               <button
-                className='text-2xl lg:hidden'
+                className='text-2xl absolute right-3 cursor-pointer'
                 onClick={() => setSelectedId(0)}
               >
                 X
