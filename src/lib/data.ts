@@ -21,13 +21,3 @@ export const menu = [
   }
 ]
 
-export const language = [
-  {
-    title_en: 'English',
-    title_es: 'Español'
-  },
-  {
-    title_en: 'Español',
-    title_es: 'Inglés'
-  }
-]

@@ -23,8 +23,8 @@ const Header = () => {
         </div>
         <div></div>
         <div className='flex flex-col'>
-          <a href='mailto:information@lotte.com'>
-            <span className='hover:underline'>information@lotte.com</span>
+          <a href='mailto:studio.lotte.lotte@gmail.com'>
+            <span className='hover:underline'>studio.lotte.lotte@gmail.com</span>
           </a>
           <a
             href='https://instagram.com/lottegarden'

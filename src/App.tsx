@@ -6,6 +6,7 @@ import Plants from './pages/plants'
 import Journal from './pages/journal'
 import Texts from './pages/texts'
 import Error from './error'
+import Search from './pages/search'
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
         <Route
           path='/texts'
           component={Texts}
+        />
+        <Route
+          path='/search'
+          component={Search}
         />
 
         <Route component={Error} />
