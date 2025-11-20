@@ -41,7 +41,7 @@ const Header = () => {
             </div>
             <div className='flex flex-col'>
               <span>Agustin Vrech</span>
-              <span> 2025</span>
+              <span>2025</span>
             </div>
           </div>
         </>
