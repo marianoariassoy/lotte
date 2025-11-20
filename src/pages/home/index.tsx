@@ -15,7 +15,7 @@ const Index = () => {
 
   if (loading)
     return (
-      <div className='w-full h-full flex items-center justify-center mt-20'>
+      <div className='w-full h-full flex items-center justify-center mt-10'>
         <PulseLoader />
       </div>
     )
@@ -23,7 +23,7 @@ const Index = () => {
   if (!data) return null
 
   return (
-    <section>
+    <section className='mt-16 lg:mt-6'>
       <List data={data} />
     </section>
   )
