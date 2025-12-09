@@ -1,17 +1,16 @@
-import List from '../../components/List'
 import useFetch from '../../hooks/useFetch'
 import PulseLoader from 'react-spinners/PulseLoader'
-import { useDataContext } from '../../context/useDataContext'
+import Image from '../../components/Image'
 
 interface Data {
   id: number
   image: string
   title: string
+  portrait: boolean
 }
 
 const Index = () => {
-  const { lan } = useDataContext()
-  const { data, loading } = useFetch<Data[]>(`/home/${lan}`)
+  const { data, loading } = useFetch<Data[]>(`/hero`)
 
   if (loading)
     return (
@@ -23,8 +22,19 @@ const Index = () => {
   if (!data) return null
 
   return (
-    <section className='mt-16 lg:mt-6'>
-      <List data={data} />
+    <section className='px-2 lg:px-4 flex flex-col items-center gap-y-2 lg:gap-y-4 mb-2 lg:mb-4'>
+      {data.map((item, index) => (
+        <div
+          key={index}
+          className={`${item.portrait ? 'lg:w-1/2' : 'w-full'} `}
+        >
+          <Image
+            src={item.image}
+            alt={item.title}
+            key={index}
+          />
+        </div>
+      ))}
     </section>
   )
 }
